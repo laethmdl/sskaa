@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    min-height: 100vh;
+    direction: rtl;
+  }
+
+  /* التوافق بين المتصفحات للأزرار والمدخلات */
+  button, 
+  input, 
+  select, 
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  /* تحسين عرض النصوص بشكل متناسق في كل المتصفحات */
+  h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: break-word;
+  }
+
+  /* تحسين عرض الجداول */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  /* ضمان توافق مربعات الاختيار والأزرار الراديوية بشكل أفضل */
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  /* تحسين الصور ومنع الخروج عن الحدود */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* تحسينات لمكونات shadcn في مختلف المتصفحات */
+  .shadcn-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  /* تحسين أداء خطوط النصوص في جميع المتصفحات */
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  /* تحسين موافقة التصميم بين المتصفحات المختلفة */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+
+  /* تحسين ظهور الأزرار والمدخلات بشكل متناسق */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+
+  /* تحسين عرض الجداول في جميع المتصفحات */
+  .data-table {
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem;
+    text-align: right;
+  }  
+
+  /* دعم لمتغيرات CSS الخاصة بنسبة البكسل */
+  :root {
+    --device-pixel-ratio: 1;
+  }
+}
